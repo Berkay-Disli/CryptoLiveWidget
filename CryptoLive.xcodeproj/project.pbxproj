@@ -11,7 +11,36 @@
 		236376E02932366C00CCA39F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236376DF2932366C00CCA39F /* ContentView.swift */; };
 		236376E22932366D00CCA39F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236376E12932366D00CCA39F /* Assets.xcassets */; };
 		236376E62932366D00CCA39F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236376E52932366D00CCA39F /* Preview Assets.xcassets */; };
+		236376F3293236C800CCA39F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236376F2293236C800CCA39F /* WidgetKit.framework */; };
+		236376F5293236C800CCA39F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236376F4293236C800CCA39F /* SwiftUI.framework */; };
+		236376F8293236C800CCA39F /* CryptoLiveWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236376F7293236C800CCA39F /* CryptoLiveWidget.swift */; };
+		236376FA293236CA00CCA39F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236376F9293236CA00CCA39F /* Assets.xcassets */; };
+		236376FE293236CA00CCA39F /* CryptoLiveWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 236376F0293236C800CCA39F /* CryptoLiveWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		236376FC293236CA00CCA39F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 236376D22932366C00CCA39F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 236376EF293236C800CCA39F;
+			remoteInfo = CryptoLiveWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		23637702293236CA00CCA39F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				236376FE293236CA00CCA39F /* CryptoLiveWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		236376DA2932366C00CCA39F /* CryptoLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +49,12 @@
 		236376E12932366D00CCA39F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		236376E32932366D00CCA39F /* CryptoLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoLive.entitlements; sourceTree = "<group>"; };
 		236376E52932366D00CCA39F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		236376F0293236C800CCA39F /* CryptoLiveWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CryptoLiveWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		236376F2293236C800CCA39F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		236376F4293236C800CCA39F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		236376F7293236C800CCA39F /* CryptoLiveWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoLiveWidget.swift; sourceTree = "<group>"; };
+		236376F9293236CA00CCA39F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		236376FB293236CA00CCA39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +65,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		236376ED293236C800CCA39F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				236376F5293236C800CCA39F /* SwiftUI.framework in Frameworks */,
+				236376F3293236C800CCA39F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				236376DC2932366C00CCA39F /* CryptoLive */,
+				236376F6293236C800CCA39F /* CryptoLiveWidget */,
+				236376F1293236C800CCA39F /* Frameworks */,
 				236376DB2932366C00CCA39F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				236376DA2932366C00CCA39F /* CryptoLive.app */,
+				236376F0293236C800CCA39F /* CryptoLiveWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +116,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		236376F1293236C800CCA39F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				236376F2293236C800CCA39F /* WidgetKit.framework */,
+				236376F4293236C800CCA39F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		236376F6293236C800CCA39F /* CryptoLiveWidget */ = {
+			isa = PBXGroup;
+			children = (
+				236376F7293236C800CCA39F /* CryptoLiveWidget.swift */,
+				236376F9293236CA00CCA39F /* Assets.xcassets */,
+				236376FB293236CA00CCA39F /* Info.plist */,
+			);
+			path = CryptoLiveWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,15 +145,34 @@
 				236376D62932366C00CCA39F /* Sources */,
 				236376D72932366C00CCA39F /* Frameworks */,
 				236376D82932366C00CCA39F /* Resources */,
+				23637702293236CA00CCA39F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				236376FD293236CA00CCA39F /* PBXTargetDependency */,
 			);
 			name = CryptoLive;
 			productName = CryptoLive;
 			productReference = 236376DA2932366C00CCA39F /* CryptoLive.app */;
 			productType = "com.apple.product-type.application";
+		};
+		236376EF293236C800CCA39F /* CryptoLiveWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 236376FF293236CA00CCA39F /* Build configuration list for PBXNativeTarget "CryptoLiveWidgetExtension" */;
+			buildPhases = (
+				236376EC293236C800CCA39F /* Sources */,
+				236376ED293236C800CCA39F /* Frameworks */,
+				236376EE293236C800CCA39F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryptoLiveWidgetExtension;
+			productName = CryptoLiveWidgetExtension;
+			productReference = 236376F0293236C800CCA39F /* CryptoLiveWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +185,9 @@
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					236376D92932366C00CCA39F = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					236376EF293236C800CCA39F = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
 				};
@@ -118,6 +206,7 @@
 			projectRoot = "";
 			targets = (
 				236376D92932366C00CCA39F /* CryptoLive */,
+				236376EF293236C800CCA39F /* CryptoLiveWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +218,14 @@
 			files = (
 				236376E62932366D00CCA39F /* Preview Assets.xcassets in Resources */,
 				236376E22932366D00CCA39F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		236376EE293236C800CCA39F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				236376FA293236CA00CCA39F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +241,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		236376EC293236C800CCA39F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				236376F8293236C800CCA39F /* CryptoLiveWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		236376FD293236CA00CCA39F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 236376EF293236C800CCA39F /* CryptoLiveWidgetExtension */;
+			targetProxy = 236376FC293236CA00CCA39F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		236376E72932366D00CCA39F /* Debug */ = {
@@ -259,6 +372,7 @@
 		236376EA2932366D00CCA39F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CryptoLive/CryptoLive.entitlements;
@@ -287,7 +401,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = berkaydisli.CryptoLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,6 +413,7 @@
 		236376EB2932366D00CCA39F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CryptoLive/CryptoLive.entitlements;
@@ -325,10 +442,71 @@
 				PRODUCT_BUNDLE_IDENTIFIER = berkaydisli.CryptoLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		23637700293236CA00CCA39F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62693BZN4B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoLiveWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoLiveWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = berkaydisli.CryptoLive.CryptoLiveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		23637701293236CA00CCA39F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62693BZN4B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoLiveWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoLiveWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = berkaydisli.CryptoLive.CryptoLiveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -349,6 +527,15 @@
 			buildConfigurations = (
 				236376EA2932366D00CCA39F /* Debug */,
 				236376EB2932366D00CCA39F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		236376FF293236CA00CCA39F /* Build configuration list for PBXNativeTarget "CryptoLiveWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23637700293236CA00CCA39F /* Debug */,
+				23637701293236CA00CCA39F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
