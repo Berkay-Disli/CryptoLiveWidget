@@ -47,10 +47,10 @@ struct Provider: TimelineProvider {
 fileprivate let APIURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=7d"
 
 struct Crypto: TimelineEntry, Codable {
-    var date: Date = .init()
+    var date = Date()
     var priceChange: Double = 0.0
     var currentPrice: Double = 0.0
-    var last7Days: SparklineData = .init()
+    var last7Days = SparklineData()
     
     enum CodingKeys: String, CodingKey {
         case priceChange = "price_change_percentage_7d_in_currency"
@@ -69,8 +69,48 @@ struct SparklineData: Codable {
 
 struct CryptoLiveWidgetEntryView : View {
     var crypto: Provider.Entry
-
+    @Environment(\.widgetFamily) var family
+    
     var body: some View {
+        if family == .systemMedium {
+            MediumSizedWidget()
+        } else {
+            LockScreenWidget()
+        }
+    }
+    
+    @ViewBuilder
+    func LockScreenWidget() -> some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: "bitcoinsign.circle")
+                    .resizable()
+                    .renderingMode(.template)
+                    .aspectRatio(contentMode: .fit)
+                
+                VStack(alignment: .leading) {
+                    Text("Bitcoin")
+                        .font(.callout)
+                    
+                    Text("BTC")
+                        .font(.caption2)
+                }
+            }
+            
+            HStack {
+                Text(crypto.currentPrice.toCurrency())
+                    .fontWeight(.semibold)
+                    .font(.callout)
+                
+                Text(crypto.priceChange.toString(floatingPoint: 1) + "%")
+                    .font(.caption2)
+            }
+        }
+    }
+    
+    
+    @ViewBuilder
+    func MediumSizedWidget() -> some View {
         ZStack {
             Rectangle()
                 .fill(Color("WidgetBackground"))
@@ -109,14 +149,28 @@ struct CryptoLiveWidgetEntryView : View {
                     }
                     
                     Chart {
+                        let graphColor = crypto.priceChange < 0 ? Color.red:Color("Green")
                         ForEach(crypto.last7Days.price.indices, id: \.self) { index in
-                            LineMark(x: .value("Hour", index), y:  .value("Price", crypto.last7Days.price[index]))
+                            LineMark(x: .value("Hour", index), y:  .value("Price", crypto.last7Days.price[index] - min()))
+                                .foregroundStyle(graphColor)
+                            
+                            AreaMark(x: .value("Hour", index), y:  .value("Price", crypto.last7Days.price[index] - min()))
+                                .foregroundStyle(.linearGradient(colors: [graphColor.opacity(0.2), graphColor.opacity(0.1), .clear], startPoint: .top, endPoint: .bottom))
                         }
                     }
+                    .chartXAxis(.hidden)
+                    .chartYAxis(.hidden)
                 }
             }
             .padding()
         }
+    }
+    
+    func min() -> Double {
+        if let min = crypto.last7Days.price.min() {
+            return min
+        }
+        return 0.0
     }
 }
 
@@ -128,7 +182,7 @@ struct CryptoLiveWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             CryptoLiveWidgetEntryView(crypto: entry)
         }
-        .supportedFamilies([.systemMedium])
+        .supportedFamilies([.systemMedium, .accessoryRectangular])
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
     }
